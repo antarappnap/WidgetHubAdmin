@@ -3,6 +3,19 @@
   <groupId>WidgetHub</groupId>
   <artifactId>WidgetHub</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-java</artifactId>
+		    <version>4.1.1</version>
+	    </dependency>
+		<dependency>
+		    <groupId>org.testng</groupId>
+		    <artifactId>testng</artifactId>
+		    <version>7.4.0</version>
+		    <scope>test</scope>
+		</dependency>
+  </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
