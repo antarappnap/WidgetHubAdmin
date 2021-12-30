@@ -1,8 +1,12 @@
 package Admin;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class Add {
 
@@ -21,6 +25,27 @@ public class Add {
 			driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("KabirWeJet21#");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
-	}
+			
+			List<WebElement> list = driver.findElements(By.xpath("//ul/li[@class='nav-item has-treeview ']"));
 
+		    for (WebElement ele : list)
+		 
+		    {
+			     //System.out.println("Values " + ele.getAttribute("innerHTML"));
+			
+			     if (ele.getAttribute("innerHTML").contains("Admins")) {
+		
+				       ele.click();
+			
+				       break;
+			 
+			     }
+			     else {
+			    	 System.out.println("No Elements Found");
+			     }
+		 
+		    }  
+		    
+	}
 }
+
