@@ -3,6 +3,7 @@ package Admin;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,14 +49,20 @@ public class Add {
 		 
 		    }  
 		    driver.findElement(By.xpath("//li[2]/ul/li[1]/a")).click();
-		    driver.findElement(By.id("name")).sendKeys("test3");
-		    driver.findElement(By.id("email")).sendKeys("test3@appnap.io");
+		    driver.findElement(By.id("name")).sendKeys("test5");
+		    driver.findElement(By.id("email")).sendKeys("test5@appnap.io");
 		    driver.findElement(By.id("exampleInputPassword1")).sendKeys("KabirWeJet21#");
 		    Thread.sleep(2000);
 		    
 		    Select usertype = new Select(driver.findElement(By.name("is_super")));
 		    usertype.selectByValue("1");
 		    driver.findElement(By.xpath("//button[@type='submit']")).click();
+		    
+		    Thread.sleep(2000);
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+		    js.executeScript("window.scrollBy(0,350)", "");
+		    
+		
 		
 	}
 }
