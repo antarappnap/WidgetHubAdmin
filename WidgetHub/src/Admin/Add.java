@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 public class Add {
 
 
+	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) throws InterruptedException {
 		 
 		 
@@ -47,10 +48,13 @@ public class Add {
 		 
 		    }  
 		    driver.findElement(By.xpath("//li[2]/ul/li[1]/a")).click();
-		    driver.findElement(By.id("name")).sendKeys("Alam");
-		    driver.findElement(By.id("email")).sendKeys("alam@appnap.io");
+		    driver.findElement(By.id("name")).sendKeys("test3");
+		    driver.findElement(By.id("email")).sendKeys("test3@appnap.io");
 		    driver.findElement(By.id("exampleInputPassword1")).sendKeys("KabirWeJet21#");
 		    Thread.sleep(2000);
+		    
+		    Select usertype = new Select(driver.findElement(By.name("is_super")));
+		    usertype.selectByValue("1");
 		    driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 	}
